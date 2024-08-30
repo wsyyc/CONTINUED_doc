@@ -84,9 +84,173 @@ df_desi_lm, df_desi_unlm = load_raw_desi_data(desi_lm_file, desi_unlm_file)
 df_desi_lm.head()
 ```
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-![png](./Image/img.table1.png)
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>554.2598</th>
+      <th>555.2624</th>
+      <th>255.2321</th>
+      <th>283.2630</th>
+      <th>617.2543</th>
+      <th>639.2358</th>
+      <th>556.2648</th>
+      <th>1109.5251</th>
+      <th>...</th>
+      <th>120.8259</th>
+      <th>1008.1007</th>
+      <th>606.3760</th>
+      <th>544.8434</th>
+      <th>963.6295</th>
+      <th>953.6077</th>
+      <th>669.2527</th>
+      <th>866.6569</th>
+      <th>1139.9606</th>
+      <th>905.9409</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Bin_0</th>
+      <td>9.90</td>
+      <td>-5.5</td>
+      <td>75510.0</td>
+      <td>23677.0</td>
+      <td>44705.0</td>
+      <td>31584.0</td>
+      <td>5414.0</td>
+      <td>4032.0</td>
+      <td>5316.0</td>
+      <td>2169.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>58.0</td>
+      <td>59.0</td>
+      <td>47.0</td>
+      <td>0.0</td>
+      <td>43.0</td>
+      <td>41.0</td>
+      <td>37.0</td>
+      <td>64.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Bin_1</th>
+      <td>9.95</td>
+      <td>-5.5</td>
+      <td>249229.0</td>
+      <td>69484.0</td>
+      <td>135958.0</td>
+      <td>97956.0</td>
+      <td>9808.0</td>
+      <td>10583.0</td>
+      <td>15232.0</td>
+      <td>4541.0</td>
+      <td>...</td>
+      <td>107.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>11.0</td>
+      <td>28.0</td>
+      <td>48.0</td>
+      <td>43.0</td>
+      <td>0.0</td>
+      <td>63.0</td>
+    </tr>
+    <tr>
+      <th>Bin_2</th>
+      <td>10.00</td>
+      <td>-5.5</td>
+      <td>457247.0</td>
+      <td>123968.0</td>
+      <td>242046.0</td>
+      <td>179161.0</td>
+      <td>13512.0</td>
+      <td>16962.0</td>
+      <td>27581.0</td>
+      <td>7991.0</td>
+      <td>...</td>
+      <td>77.0</td>
+      <td>0.0</td>
+      <td>59.0</td>
+      <td>0.0</td>
+      <td>101.0</td>
+      <td>0.0</td>
+      <td>95.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>74.0</td>
+    </tr>
+    <tr>
+      <th>Bin_3</th>
+      <td>10.05</td>
+      <td>-5.5</td>
+      <td>618506.0</td>
+      <td>168205.0</td>
+      <td>337813.0</td>
+      <td>245342.0</td>
+      <td>17411.0</td>
+      <td>18315.0</td>
+      <td>36314.0</td>
+      <td>9437.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>126.0</td>
+      <td>26.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>80.0</td>
+      <td>0.0</td>
+      <td>166.0</td>
+      <td>115.0</td>
+    </tr>
+    <tr>
+      <th>Bin_4</th>
+      <td>10.10</td>
+      <td>-5.5</td>
+      <td>857867.0</td>
+      <td>222052.0</td>
+      <td>464197.0</td>
+      <td>330602.0</td>
+      <td>21145.0</td>
+      <td>22537.0</td>
+      <td>47566.0</td>
+      <td>13627.0</td>
+      <td>...</td>
+      <td>117.0</td>
+      <td>0.0</td>
+      <td>260.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>73.0</td>
+      <td>61.0</td>
+      <td>75.0</td>
+      <td>61.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 3002 columns</p>
+</div>
+
 
 
 ### Step2: Tissue detection
