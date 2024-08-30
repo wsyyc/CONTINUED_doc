@@ -19,7 +19,7 @@ input_sample_list = '/data/yuchen_data/desi_scripts/data/annotation_data/sample.
 mass_cutoff = 0.02
 
 ```
-### Step1: we first parse DESI data and LC-MS data
+### Step1: Parse DESI data and LC-MS data
 
 
 ```python
@@ -32,7 +32,7 @@ lipid = Parsing_Lipid(input_lipid)
 small_mol = Parsing_Small_Molecule(input_small_mol)
 ```
 
-### Step2: We then generate a file named 'mass_dis_in_samples.txt'
+### Step2: Generate a file named 'mass_dis_in_samples.txt'
 
 
 ```python
@@ -41,14 +41,14 @@ Print_Mass_Diff_By_Samples(sample_mass, output_sample_mass)
 ```
 
 
-### Step3: We next utilize kde to clustering all m/z
+### Step3: Utilize kde to clustering all m/z
 
 ```python
 mass_index_group = Group_Mass(mass, lipid, small_mol, mass_cutoff)
 mass_clustered = Clustering_Mass_by_KDE(mass_index_group, lipid, small_mol, mass_cutoff)
 ```
 
-### Step4: we can generate the file 'colon_cancer_desi_.clustered_mass.table.with.anno.txt' that recoded the annotation information for all m/z across all samples
+### Step4: Generate the file 'colon_cancer_desi_.clustered_mass.table.with.anno.txt' that recoded the annotation information for all m/z across all samples
 
 ```python
 Print_Clustered_Mass_By_Sample(mass_clustered, mass_sample, lipid, small_mol, output_prefix)
