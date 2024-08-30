@@ -7,5 +7,5 @@
 
 
 Using `CONTINUED` you can do:
-* Process  *In situ* metabonomics data which include tissue detection, remove noise signal and clustering.
+* Processing  *In situ* metabonomics data which include tissue detection, remove noise signal and clustering.
 * Annotating *In situ* metabonomics data utilize LC-MS data.
