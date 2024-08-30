@@ -19,7 +19,7 @@ input_sample_list = '/data/yuchen_data/desi_scripts/data/annotation_data/sample.
 mass_cutoff = 0.02
 
 ```
-Step1: we first parse DESI data and LC-MS data
+### Step1: we first parse DESI data and LC-MS data
 
 
 ```python
