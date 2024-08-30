@@ -292,7 +292,6 @@ display(fig)
 
 
 ```python
-# Next, we are going to identify the tissue region
 if mz_tissue_type == 'unlm':
     tissue_mask = tissue_detection(df_desi_unlm, str(mz_tissue), to_dir, thresh=thresh, otsu=False, dilate_size=2, tissue_erode_size=5)
 else:
