@@ -33,8 +33,7 @@ def pdf2png(pdf_file):
     
     return img
 ```
-
-## 	Define the sample informations and the parameters
+### Define the sample informations and the parameters
 
 ```python
 sample = 'ST87_20210331'
@@ -71,7 +70,7 @@ check_makedir(to_dir)
 check_makedir(border_dir)
 ```
 
-## Step1: Load DESI raw data
+### Step1: Load DESI raw data
 
 
 ```python
@@ -256,8 +255,8 @@ df_desi_lm.head()
 
 
 
-## Step2: Tissue detection
-### We first check the selected m/z(mz_tissue) can indicate the real tissue.
+### Step2: Tissue detection
+#### We first check the selected m/z(mz_tissue) can indicate the real tissue.
 
 
 
@@ -265,7 +264,7 @@ df_desi_lm.head()
 check_tissue_mz(mz_tissue_type, mz_tissue, thresh, df_desi_unlm, df_desi_lm, cmap, to_dir)
 ```
 
-### check_tissue_mz will generate two pdf represents the raw and binarized signal of the selected m/z
+#### check_tissue_mz will generate two pdf represents the raw and binarized signal of the selected m/z
 
 
 ```python
@@ -314,8 +313,8 @@ display(fig)
     
 
 
-## Step 3: remove background and extract tissue signal
-### Because the DESI data are noisy, the noise signal will affects the accuracy of subsequent analysis, so, in this step, we are going to filter some signal
+### Step 3: remove background and extract tissue signal
+#### Because the DESI data are noisy, the noise signal will affects the accuracy of subsequent analysis, so, in this step, we are going to filter some signal
 
 
 ```python
@@ -337,7 +336,7 @@ print(f'In the lock mass matrux, the raw signal number is {df_desi_lm.shape[1] -
     In the lock mass matrux, the raw signal number is 3000, the retained signal number is 517
 
 
-### we can save the retained signal matrix
+#### we can save the retained signal matrix
 
 
 ```python
@@ -351,9 +350,9 @@ df_desi_unlm_final.to_csv(f'{to_dir}/3.result.true.signal.unlm.txt', sep='\t')
 df_desi_lm_final.to_csv(f'{to_dir}/3.result.true.signal.lm.txt', sep='\t')
 ```
 
-## 	Step 4: create annadata object and clustering
-#### This step will generate and save the annadata object in the folder "todir"
-#### The clustering result also saved in the file "4.clustering.lm.pdf" and "4.clustering.unlm.pdf"
+### 	Step 4: create annadata object and clustering
+##### This step will generate and save the annadata object in the folder "todir"
+##### The clustering result also saved in the file "4.clustering.lm.pdf" and "4.clustering.unlm.pdf"
 
 
 ```python
@@ -388,8 +387,8 @@ display(fig)
     
 
 
-## Step 5: plot the cluster borderline for visualization
-#### This step will generate the borderline for each cluster, then we can overlay the image for visualization
+### Step 5: plot the cluster borderline for visualization
+##### This step will generate the borderline for each cluster, then we can overlay the image for visualization
 
 
 ```python
