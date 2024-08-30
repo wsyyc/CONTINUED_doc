@@ -286,7 +286,6 @@ display(fig)
 ```
 
 
-    
 ![png](./Image/img1.png)
     
 
