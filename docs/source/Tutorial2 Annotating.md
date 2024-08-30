@@ -254,8 +254,6 @@ df.head()
 </div>
 
 
-
-
 ```python
 
 ```
