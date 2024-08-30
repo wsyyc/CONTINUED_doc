@@ -54,14 +54,11 @@ mass_clustered = Clustering_Mass_by_KDE(mass_index_group, lipid, small_mol, mass
 Print_Clustered_Mass_By_Sample(mass_clustered, mass_sample, lipid, small_mol, output_prefix)
 ```
 
-#### Each row represents an LC-MS annotated metabolite, each column represents a sample, and each cell indicates whether an m/z value in that sample has been annotated as the corresponding metabolite. If it has, the cell value is the m/z for that sample; if not, the cell value is NaN.
 
 
-```python
+```pythoN
+# Each row represents an LC-MS annotated metabolite, each column represents a sample, and each cell indicates whether an m/z value in that sample has been annotated as the corresponding metabolite. If it has, the cell value is the m/z for that sample; if not, the cell value is NaN.
 df = pd.read_csv('colon_cancer_desi_.clustered_mass.table.with.anno.txt', index_col=0, sep='\t')
-```
-
-```python
 df.head()
 ```
 
