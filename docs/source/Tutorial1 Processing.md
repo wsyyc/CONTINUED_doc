@@ -36,7 +36,7 @@ def pdf2png(pdf_file):
 
 
 ```pythoN
-# Define the sample informations and the parameters
+## Define the sample informations and the parameters
 sample = 'ST87_20210331'
 to_dir = f'/data/yuchen_data/desi_scripts/result/{sample}'
 
