@@ -33,9 +33,10 @@ def pdf2png(pdf_file):
     
     return img
 ```
-### Define the sample informations and the parameters
 
-```python
+
+```pythoN
+# Define the sample informations and the parameters
 sample = 'ST87_20210331'
 to_dir = f'/data/yuchen_data/desi_scripts/result/{sample}'
 
