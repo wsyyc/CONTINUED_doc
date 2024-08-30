@@ -23,8 +23,8 @@ Using `CONTINUED` you can do:
 
 
    Overview
-   Installation
-   Tutorial1 Processing
-   Tutorial2 Annotating
+   Installation.md
+   Tutorial1 Processing.md
+   Tutorial2 Annotating.md
 
 ===================================
