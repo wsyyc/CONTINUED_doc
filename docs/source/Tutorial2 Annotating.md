@@ -1,3 +1,5 @@
+# Tutorial 2: Annotating the *In situ* metabonomics data
+
 ```python
 import os
 import numpy as np
@@ -18,7 +20,7 @@ mass_cutoff = 0.02
 
 ```
 
-## we first parse DESI data and LC-MS data
+### we first parse DESI data and LC-MS data
 
 
 ```python
@@ -31,7 +33,7 @@ lipid = Parsing_Lipid(input_lipid)
 small_mol = Parsing_Small_Molecule(input_small_mol)
 ```
 
-## We then generate a file named 'mass_dis_in_samples.txt'
+### We then generate a file named 'mass_dis_in_samples.txt'
 
 
 ```python
@@ -40,7 +42,7 @@ Print_Mass_Diff_By_Samples(sample_mass, output_sample_mass)
 ```
 
 
-## We next utilize kde to clustering all m/z
+### We next utilize kde to clustering all m/z
 
 ```python
 mass_index_group = Group_Mass(mass, lipid, small_mol, mass_cutoff)
@@ -53,7 +55,7 @@ mass_clustered = Clustering_Mass_by_KDE(mass_index_group, lipid, small_mol, mass
 Print_Clustered_Mass_By_Sample(mass_clustered, mass_sample, lipid, small_mol, output_prefix)
 ```
 
-## Each row represents an LC-MS annotated metabolite, each column represents a sample, and each cell indicates whether an m/z value in that sample has been annotated as the corresponding metabolite. If it has, the cell value is the m/z for that sample; if not, the cell value is NaN.
+### Each row represents an LC-MS annotated metabolite, each column represents a sample, and each cell indicates whether an m/z value in that sample has been annotated as the corresponding metabolite. If it has, the cell value is the m/z for that sample; if not, the cell value is NaN.
 
 
 ```python
