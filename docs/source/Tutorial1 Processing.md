@@ -257,18 +257,20 @@ df_desi_lm.head()
 
 
 ### Step2: Tissue detection
-#### We first check the selected m/z(mz_tissue) can indicate the real tissue.
+
 
 
 
 ```python
+#  We first check the selected m/z(mz_tissue) can indicate the real tissue.
 check_tissue_mz(mz_tissue_type, mz_tissue, thresh, df_desi_unlm, df_desi_lm, cmap, to_dir)
 ```
 
-#### check_tissue_mz will generate two pdf represents the raw and binarized signal of the selected m/z
+
 
 
 ```python
+# check_tissue_mz will generate two pdf represents the raw and binarized signal of the selected m/z
 img1 = pdf2png(f'{to_dir}/1.1.check.tissue_mz.pdf')
 img2 = pdf2png(f'{to_dir}/1.2.check.tissue_mz.thresh.pdf')
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
@@ -289,10 +291,8 @@ display(fig)
     
 
 
-### Next, we are going to identify the tissue region
-
-
 ```python
+# Next, we are going to identify the tissue region
 if mz_tissue_type == 'unlm':
     tissue_mask = tissue_detection(df_desi_unlm, str(mz_tissue), to_dir, thresh=thresh, otsu=False, dilate_size=2, tissue_erode_size=5)
 else:
@@ -315,10 +315,11 @@ display(fig)
 
 
 ### Step 3: remove background and extract tissue signal
-#### Because the DESI data are noisy, the noise signal will affects the accuracy of subsequent analysis, so, in this step, we are going to filter some signal
+
 
 
 ```python
+# Because the DESI data are noisy, the noise signal will affects the accuracy of subsequent analysis, so, in this step, we are going to filter some signal
 noise_signal_unlm, true_signal_unlm, df_desi_unlm_filter = remove_noise_signal(df_desi_unlm, tissue_mask, num, bg_percent)
 noise_signal_lm, true_signal_lm, df_desi_lm_filter = remove_noise_signal(df_desi_lm, tissue_mask, num, bg_percent)
 ```
@@ -337,10 +338,11 @@ print(f'In the lock mass matrux, the raw signal number is {df_desi_lm.shape[1] -
     In the lock mass matrux, the raw signal number is 3000, the retained signal number is 517
 
 
-#### we can save the retained signal matrix
+
 
 
 ```python
+#  we can save the retained signal matrix
 # save true signal matrix
 df_desi_unlm_filter.columns = ['x', 'y'] + [f'mz_{x}' for x in df_desi_unlm_filter.columns[2: ]]
 df_desi_lm_filter.columns = ['x', 'y'] + [f'mz_{x}' for x in df_desi_lm_filter.columns[2: ]]
@@ -352,11 +354,10 @@ df_desi_lm_final.to_csv(f'{to_dir}/3.result.true.signal.lm.txt', sep='\t')
 ```
 
 ### 	Step 4: create annadata object and clustering
-##### This step will generate and save the annadata object in the folder "todir"
-##### The clustering result also saved in the file "4.clustering.lm.pdf" and "4.clustering.unlm.pdf"
-
 
 ```python
+# This step will generate and save the annadata object in the folder "todir"
+# The clustering result also saved in the file "4.clustering.lm.pdf" and "4.clustering.unlm.pdf"
 adata_lm = create_desi_obj(df_desi_lm_final)
 adata_lm = desi_clustering(adata_lm, resolution, f'{to_dir}/4.clustering.lm', col16)
 adata_lm.write_h5ad(f'{to_dir}/4.lm_final.h5ad')
@@ -389,10 +390,11 @@ display(fig)
 
 
 ### Step 5: plot the cluster borderline for visualization
-##### This step will generate the borderline for each cluster, then we can overlay the image for visualization
+
 
 
 ```python
+# This step will generate the borderline for each cluster, then we can overlay the image for visualization
 prefix_lm = f'{border_dir}/lm'
 plot_cluster_border(adata_lm, prefix_lm, threshold_border, col16)
 
